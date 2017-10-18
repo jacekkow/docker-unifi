@@ -1,12 +1,11 @@
-FROM debian
+FROM openjdk:8-jre-slim
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
 ENV UNIFI_VERSION 5.4.19
 
 RUN apt-get update \
-	&& apt-get -y dist-upgrade \
 	&& apt-get -y install \
-		wget jsvc openjdk-8-jre-headless mongodb-server binutils sudo \
+		wget jsvc mongodb-server binutils procps sudo \
 	&& apt-get -y clean
 
 RUN cd /tmp \

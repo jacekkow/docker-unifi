@@ -15,7 +15,8 @@ RUN cd /tmp \
 	&& rm -rf unifi_sysvinit_all.deb /var/lib/unifi/* \
 	&& groupadd -r -g 500 unifi \
 	&& useradd -r -d /usr/lib/unifi -u 500 -g 500 unifi \
-	&& chown -Rf unifi:unifi /usr/lib/unifi
+	&& mkdir /usr/lib/unifi/data /var/lib/unifi \
+	&& chown -Rf unifi:unifi /usr/lib/unifi /var/lib/unifi
 
 EXPOSE 8080 8081 8443 8843 8880
 
@@ -24,3 +25,5 @@ VOLUME /usr/lib/unifi/data
 WORKDIR /var/lib/unifi
 COPY run.sh /run.sh
 CMD /run.sh
+
+USER unifi

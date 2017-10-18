@@ -6,7 +6,8 @@ ENV UNIFI_VERSION 5.4.19
 RUN apt-get update \
 	&& apt-get -y install \
 		wget jsvc mongodb-server binutils procps sudo \
-	&& apt-get -y clean
+	&& apt-get -y clean \
+	&& rm -Rf /var/lib/apt/lists/*
 
 RUN cd /tmp \
 	&& wget "https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/unifi_sysvinit_all.deb" \

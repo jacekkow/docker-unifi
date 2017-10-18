@@ -27,3 +27,6 @@ COPY run.sh /run.sh
 CMD /run.sh
 
 USER unifi
+
+HEALTHCHECK --start-period=3m CMD wget -q -O /dev/null --no-check-certificate \
+	https://127.0.0.1:8443/manage/account/login

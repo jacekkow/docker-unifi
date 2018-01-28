@@ -1,21 +1,21 @@
 FROM openjdk:8-jre-slim
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
-ENV UNIFI_VERSION 5.5.24
+ENV UNIFI_VERSION 5.6.26
 
 RUN apt-get update \
 	&& apt-get -y install \
-		wget jsvc mongodb-server binutils procps sudo \
+		wget jsvc mongodb-server libcap2 binutils procps sudo \
 	&& apt-get -y clean \
 	&& rm -Rf /var/lib/apt/lists/*
 
 RUN cd /tmp \
 	&& wget "https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/unifi_sysvinit_all.deb" \
-	&& dpkg -i unifi_sysvinit_all.deb \
-	&& rm -rf unifi_sysvinit_all.deb /var/lib/unifi/* \
 	&& groupadd -r -g 500 unifi \
 	&& useradd -r -d /usr/lib/unifi -u 500 -g 500 unifi \
-	&& mkdir /usr/lib/unifi/data /var/lib/unifi \
+	&& dpkg -i unifi_sysvinit_all.deb \
+	&& rm -rf unifi_sysvinit_all.deb /var/lib/unifi/* \
+	&& mkdir -p /usr/lib/unifi/data /var/lib/unifi \
 	&& chown -Rf unifi:unifi /usr/lib/unifi /var/lib/unifi
 
 EXPOSE 8080 8081 8443 8843 8880

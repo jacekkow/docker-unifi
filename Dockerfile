@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-slim
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
-ENV UNIFI_VERSION 5.6.30
+ENV UNIFI_VERSION 5.6.36
 
 RUN apt-get update \
 	&& apt-get -y install \

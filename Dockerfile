@@ -18,7 +18,7 @@ RUN cd /tmp \
 	&& mkdir -p /usr/lib/unifi/data /var/lib/unifi \
 	&& chown -Rf unifi:unifi /usr/lib/unifi /var/lib/unifi
 
-EXPOSE 8080 8081 8443 8843 8880
+EXPOSE 8080 8443 8843 8880
 
 VOLUME /usr/lib/unifi/data
 

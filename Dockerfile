@@ -5,7 +5,7 @@ ENV UNIFI_VERSION 5.7.23
 
 RUN apt-get update \
 	&& apt-get -y install \
-		wget jsvc mongodb-server libcap2 binutils procps sudo \
+		curl wget jsvc mongodb-server libcap2 binutils procps sudo \
 	&& apt-get -y clean \
 	&& rm -Rf /var/lib/apt/lists/*
 

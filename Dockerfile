@@ -1,11 +1,11 @@
 FROM openjdk:8-jre-slim
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
-ENV UNIFI_VERSION 5.6.39
+ENV UNIFI_VERSION 5.8.28
 
 RUN apt-get update \
 	&& apt-get -y install \
-		wget jsvc mongodb-server libcap2 binutils procps sudo \
+		curl wget jsvc mongodb-server libcap2 binutils procps sudo \
 	&& apt-get -y clean \
 	&& rm -Rf /var/lib/apt/lists/*
 

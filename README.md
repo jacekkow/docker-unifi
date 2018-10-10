@@ -6,7 +6,7 @@ based on `openjdk:8-jre-slim`
 ## Tags
 
 Container is created for each stable UniFi release and tagged as vX.X.X.
-`:latest` tag is for the latest stable release (currently 5.8).
+`:latest` tag is for the latest stable release (currently 5.9).
 `:lts` tag is for the latest 5.6 LTS release.
 `:v5.7` tag is for the latest 5.7 release.
 `:v5.8` tag is for the latest 5.8 release.

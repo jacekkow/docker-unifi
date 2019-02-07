@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-slim
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
-ENV UNIFI_VERSION 5.9.29
+ENV UNIFI_VERSION 5.10.12
 
 RUN apt-get update \
 	&& apt-get -y install \

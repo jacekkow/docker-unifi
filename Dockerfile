@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-slim
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
-ENV UNIFI_VERSION 5.10.20
+ENV UNIFI_VERSION 5.10.21
 
 RUN apt-get update \
 	&& apt-get -y install \
@@ -10,7 +10,7 @@ RUN apt-get update \
 	&& rm -Rf /var/lib/apt/lists/*
 
 RUN cd /tmp \
-	&& wget "https://www.ubnt.com/downloads/unifi/${UNIFI_VERSION}/unifi_sysvinit_all.deb" \
+	&& wget "https://dl.ubnt.com/unifi/${UNIFI_VERSION}/unifi_sysvinit_all.deb" \
 	&& groupadd -r -g 500 unifi \
 	&& useradd -r -d /usr/lib/unifi -u 500 -g 500 unifi \
 	&& dpkg -i unifi_sysvinit_all.deb \

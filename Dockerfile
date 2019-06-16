@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-slim
+FROM debian:stretch
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
 ENV UNIFI_VERSION 5.10.24

@@ -1,7 +1,7 @@
 FROM debian:stretch
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
-ENV UNIFI_VERSION 5.12.16-949a431d7a
+ENV UNIFI_VERSION 5.12.19-98bbc5381e
 
 RUN apt-get update \
 	&& apt-get -y install \

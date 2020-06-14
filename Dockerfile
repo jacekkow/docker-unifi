@@ -1,11 +1,11 @@
 FROM debian:stretch
 MAINTAINER Jacek Kowalski <Jacek@jacekk.info>
 
-ENV UNIFI_VERSION 5.12.72
+ENV UNIFI_VERSION 5.13.29
 
 RUN apt-get update \
 	&& apt-get -y install \
-		curl wget jsvc mongodb-server libcap2 binutils procps sudo \
+		curl wget jsvc mongodb-server libcap2 binutils procps sudo logrotate \
 	&& apt-get -y clean \
 	&& rm -Rf /var/lib/apt/lists/*
 

@@ -1,3 +1,12 @@
+# THIS PROJECT IS ABANDONED
+# NO NEW RELEASES WILL BE AVAILABLE
+
+Please switch to Docker images from linuxserver.io:
+https://hub.docker.com/r/linuxserver/unifi-controller
+https://github.com/linuxserver/docker-unifi-controller
+
+
+
 # UniFi
 
 This is a Docker image of UniFi SDN controller
